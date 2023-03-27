@@ -1,0 +1,66 @@
+/* Grid Areas */
+body {
+    max-width: 375px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header"
+      "mainA"
+      "aside"
+      "secondaryA"
+      "footer";
+}
+header { 
+    grid-area: header;
+}
+.main-article {
+    grid-area: mainA;
+}
+aside {
+    grid-area: aside;
+}
+.secondary-articles {
+    grid-area: secondaryA;
+}
+footer {
+    grid-area: footer;
+}
+/* End of Grid Areas */
+/* General declarations */
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: hsl(240, 100%, 5%);
+}
+/* End of General declarations */
+
+/* Header */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.navbar {
+    width: 100 vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.navbar .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.toggle_btn{
+    cursor: pointer;
+}
+/* End of Header */
