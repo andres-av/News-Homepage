@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   
-  <link rel="stylesheet" href="./style.css">
+  
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | News homepage</title>
 </head>
@@ -13,25 +19,32 @@
   <header>
     <nav class="navbar">
       <figure>
-        <img src="./assets/images/logo.svg" alt="News Page logo">
+        <img class="wLogo" src="./assets/images/logo.svg" alt="News Page logo">
         <h1 class="sr-only">News homepage with articles about technology, internet trends, gaming and automobile industry
         </h1>
       </figure>
-      <ul class="links">
+      <div class="navbar-toggle">
+        <svg class="open-icon" width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+            <path d="M0 0h40v3H0z" />
+          </g>
+        </svg>
+        <svg class="close-icon" width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+            <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+          </g>
+        </svg>
+      </div>
+      <ul class="navbar-menu">
         <li><a href="#">Home</a></li>
         <li><a href="#">New</a></li>
         <li><a href="#">Popular</a></li>
         <li><a href="#">Trending</a></li>
         <li><a href="#">Categories</a></li>
       </ul>
-      <div class="toggle_btn">
-        <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg">
-          <g fill="#00001A" fill-rule="evenodd">
-            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
-            <path d="M0 0h40v3H0z" />
-          </g>
-        </svg>
-      </div>
+      <div class="overlay"></div>
     </nav>
   </header>
 
@@ -39,7 +52,7 @@
     <section class="main-article">
       <article>
         <figure>
-          <img src="./assets/images/image-web-3-mobile.jpg" alt="Colorful image of geometrical-shaped blocks with wooden textures">
+          <img class="mainArticleImg" src="./assets/images/image-web-3-mobile.jpg" alt="Colorful image of geometrical-shaped blocks with wooden textures">
         </figure>
         <h2>The Bright Future of Web 3.0?</h2>
         <p> We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the
@@ -97,5 +110,32 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </footer>
+  
+  <script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const openIcon = document.querySelector('.open-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    const overlay = document.querySelector('.overlay');
+
+
+    window.addEventListener('load', function () {
+        const closeIcon = document.querySelector('.close-icon');
+        closeIcon.style.display = 'none';
+      });
+
+    navbarToggle.addEventListener('click', function () {
+      if (navbarMenu.classList.contains('show')) {
+        navbarMenu.classList.remove('show');
+        openIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      } else {
+        navbarMenu.classList.add('show');
+        openIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+      }
+      overlay.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

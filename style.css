@@ -1,6 +1,9 @@
+/* Mobile first approach */
 /* Grid Areas */
 body {
     max-width: 375px;
+    padding: 1.2rem 0.8rem;
+    margin: 0px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -13,6 +16,7 @@ body {
 }
 header { 
     grid-area: header;
+    position: relative;
 }
 .main-article {
     grid-area: mainA;
@@ -28,6 +32,13 @@ footer {
 }
 /* End of Grid Areas */
 /* General declarations */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(36, 100%, 99%);
+}
+figure {
+    margin: 0px;
+}
 li {
     list-style: none;
 }
@@ -50,17 +61,64 @@ a {
     border-width: 0;
 }
 .navbar {
-    width: 100 vw;
+    width: 300px;
+    height: 5vh;
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding-bottom: 1.2rem;
+    align-items: center;
 }
-.navbar .links {
+.wLogo {
+    width: 40px;
+}
+.navbar-menu {
+    display: none;
+    position: absolute;
+    top: -70%;
+    right: 3rem;
+    width: 50%;
+    height: 100vh;
+    z-index: 2;
+    padding-top: 15vh;
+}
+.navbar-menu.show {
+    display: block;
+    background-color: hsl(36, 100%, 99%);
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.close-icon {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 3.5rem;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    display: none;
+}
+.overlay.show {
+    display: block;
+  }
+.navbar-menu li{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    padding: 1rem;
 }
 .toggle_btn{
     cursor: pointer;
 }
+.links {
+    display: none;
+}
 /* End of Header */
+/* Main Article */
+.mainArticleImg {
+    width: 300px;
+}
