@@ -11,8 +11,7 @@ body {
       "header"
       "mainA"
       "aside"
-      "secondaryA"
-      "footer";
+      "secondaryA";
 }
 header { 
     grid-area: header;
@@ -20,15 +19,13 @@ header {
 }
 .main-article {
     grid-area: mainA;
+    margin: 0px 0px 50px 0px;
 }
 aside {
     grid-area: aside;
 }
 .secondary-articles {
     grid-area: secondaryA;
-}
-footer {
-    grid-area: footer;
 }
 /* End of Grid Areas */
 /* General declarations */
@@ -121,6 +118,7 @@ a {
 /* Main Article */
 .mainArticleImg {
     width: 350px;
+    margin-bottom: 15px;
 }
 .main-article h2 {
     font-size: 2.6rem;
@@ -134,9 +132,10 @@ a {
     background-color: hsl(5, 85%, 63%);
     color: hsl(36, 100%, 99%);
     width: 180px;
-    height: 48px;
+    height: 43px;
     letter-spacing: .2rem;
     font-weight: 700;
+    margin-top: 15px;
 }
 /* End of Main Article */
 /* New (aside section) */
@@ -145,8 +144,9 @@ aside {
     padding: 18px 15px;
 }
 aside h2 {
+    font-size: 1.8rem;
     color: hsl(35, 77%, 62%);
-    margin: 0 0 30px;
+    margin: 0 0 25px;
 }
 aside h3 {
     color: hsl(36, 100%, 99%);
@@ -156,4 +156,44 @@ aside p {
     color: hsl(233, 8%, 79%);
     margin: 15px 0px;
 }
+.newsSeparator {
+    height: 0.5px;
+    background-color: hsl(233, 8%, 79%);
+    margin: 30px 0px;
+}
 /* End of New (aside section) */
+/* Secondary Articles (01, 02, 03) */
+.secondary-articles {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+.sec-art-img {
+    width: 90px;
+}
+.sec-art-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 114px;
+    margin-left: 20px;
+}
+.sec-art-text span{
+    color: hsl(233, 8%, 79%);
+    font-size: 1.5rem;
+    margin: 0px;
+    font-weight: 700;
+}
+.sec-art-text h3 {
+    font-weight: 800;
+    margin: 0px;
+    font-size: 1rem;
+}
+.sec-art-text p {
+    color: hsl(236, 13%, 42%);
+    font-size: 15px;
+    margin: 0px;
+    line-height: 1.5rem;
+    margin-right: 20px;
+}
+/* End of Secondary Articles (01, 02, 03) */
